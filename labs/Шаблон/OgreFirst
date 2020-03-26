@@ -1,0 +1,10 @@
+package shablon;
+
+public class OgreFirst extends Game {
+
+    @Override
+    protected void boil() {
+        System.out.println("Пожарил");
+    }
+
+}

@@ -17,8 +17,7 @@ public class Main {
         for (int i = 0; i < length; ++i){
             arr[i] = in.nextInt();
         }
-
-        Make Strategy = new Make(new AscendingSort()); //создаётся объект который меняет стратегии и ему в конструкторе передаются объекты сортировок
+        Make Strategy = new Make(new AscendingSort());
         Strategy.display(Strategy.performSort(arr));
         Strategy.setSorter(new DescendingSort());
         Strategy.display(Strategy.performSort(arr));

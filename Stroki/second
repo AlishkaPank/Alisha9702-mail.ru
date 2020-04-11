@@ -1,0 +1,38 @@
+import os.path
+
+
+def open_file():
+    with open(file_name) as input_file:
+            input_line = ''
+            for line in input_file:
+                for letter in line:
+                    input_line += letter
+    return input_line
+
+
+def naive_max_border(file_name):
+        n = len(input_line)
+        border = []
+        for i in range(n - 1, not border and 0, -1):
+            j = 0
+            while j < i and input_line[j] == input_line[n - i + j]:
+                j = j + 1
+            if j == i:
+                border.append(i)
+        return max(border)
+
+      
+
+
+if __name__ == '__main__':
+    while 1:
+        try:
+            file = input("Введите имя файла: ")
+            if not os.path.exists(file):
+                raise FileNotFoundError(file)
+            break
+        except FileNotFoundError:
+            print("Файл не существует.")
+    input_line = open_file()
+    result = naive_max_border(file)
+    print('Длина наибольшей грани:', result)

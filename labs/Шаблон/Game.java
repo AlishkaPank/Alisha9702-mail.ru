@@ -7,6 +7,7 @@ public abstract class Game {
         speak();
         eat();
         sleep();
+        boil();
     }
 
     protected void hunt(){

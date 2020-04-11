@@ -1,0 +1,37 @@
+import os.path
+
+
+def open_file():
+    with open(file) as input_file:
+        input_line = ''
+        for line in input_file:
+            for letter in line:
+                input_line += letter
+    return input_line
+
+
+def prefix_border_array(s):
+    n = len(s)
+    borderPrefix = [0]
+    for i in range(1, n):
+        borderPrefixRight = borderPrefix[i-1]
+        while borderPrefixRight and s[i] != s[borderPrefixRight]:
+            borderPrefixRight = borderPrefix[borderPrefixRight - 1]
+        if s[i] == s[borderPrefixRight]:
+            borderPrefix.append(borderPrefixRight + 1)
+        else:
+            borderPrefix.append(0)
+    print("Массив граней", borderPrefix)
+
+
+if __name__ == '__main__':
+    while 1:
+        try:
+            file = input("Введите имя файла: ")
+            if not os.path.exists(file):
+                raise FileNotFoundError(file)
+            break
+        except FileNotFoundError:
+            print("Файл не существует")
+    input_line = open_file()
+    prefix_border_array(input_line)

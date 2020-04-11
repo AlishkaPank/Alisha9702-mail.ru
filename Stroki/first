@@ -1,0 +1,41 @@
+import os.path
+
+
+def naive_string_match(file_name, string_line):
+    count = 0
+
+    with open(file_name) as input_file:
+        input_line = ''
+        for line in input_file:
+            print(input_file)
+            for text in line:
+                input_line += text
+
+        n = len(input_line)
+        m = len(string_line)
+
+        for i in range(n - m + 1):
+            j = 0
+            while j < m and string_line[j] == input_line[i + j]:
+                j = j + 1
+            if j == m:
+                print('Найдено вхождение в позиции', i)
+                count = count + 1
+    return count
+
+
+if __name__ == '__main__':
+    while 1:
+        try:
+            file = input("Введите имя файла : ")
+            if not os.path.exists(file):
+                raise FileNotFoundError(file)
+            break
+        except FileNotFoundError:
+            print("Файл не существует.")
+
+    string = input("Введите подстроку:")
+
+    result = naive_string_match(file, string)
+    if result is 0:
+        print("Вхождений не найдено.")

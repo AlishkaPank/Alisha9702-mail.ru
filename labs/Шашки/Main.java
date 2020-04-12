@@ -23,7 +23,6 @@ public class Main {
         move.undo();
         move.undo();
         move.undo();
-      //  move.redo();
 
     }
 }

@@ -1,0 +1,13 @@
+Есть два войска: Феи и  Ведьмы.
+В каждом войске одинаковая иерархия: персонаж, который владеет огнём, водой, воздухом или землей. 
+Создаём для них интерфейсы  Fire, Water,  Air, Land.
+А для создания самой армии создадим  интерфейс Army, 
+где будут содержаться методы createFair(), createWater(), createAir(), createLand(), 
+они уже будут возвращать сами объекты Fair, Water, Air, Land.
+В Fairy_Army будут возвращать Fairy_Fire, Fairy_ Water, Fairy_ Air, Fairy_ Land. 
+А в Witch_Army будут возвращать Witch_Fire, Witch_ Water, Witch_ Air, Witch_ Land.
+
+Fairy_Army и Witch_Army  –  это конкретные фабрики, которые будут создавать армию для Фей и Ведьм.
+
+Сами интерфейсы Fire, Water,  Air, Land будут реализованы классами:
+Fairy_Fire, Witch_Fire; Fairy_ Water, Witch_ Water; Fairy_ Air, Witch_ Air; Fairy_ Land, Witch_ Land;
